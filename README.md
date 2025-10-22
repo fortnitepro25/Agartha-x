@@ -2,7 +2,7 @@
 
 BC ryhmätyö
 
-![agartha](https://github.com/user-attachments/assets/f3fba1fd-a8ff-482b-a67f-fe4ddca56ea1)
+<img width="364" height="477" alt="agarthax" src="https://github.com/user-attachments/assets/f82e6c1d-4863-4137-bdc1-613e29c6c472" />
 
 Credits:
 
