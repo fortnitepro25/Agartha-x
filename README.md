@@ -1,3 +1,2 @@
 # Agartha-X
 
-#nigero
