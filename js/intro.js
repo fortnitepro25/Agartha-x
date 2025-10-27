@@ -49,5 +49,15 @@ document.getElementById("yesBtn").addEventListener("click", () => {
 });
 
 document.getElementById("noBtn").addEventListener("click", () => {
-  alert("Take your time, traveler of the stars 🌌");
+  alert("Take your time! Passerby of Agartha-X.");
+});
+
+const bgMusic = document.getElementById('bg-music');
+const playBtn = document.getElementById('playBtn');
+
+playBtn.addEventListener('click', () => {
+  bgMusic.muted = false;
+  bgMusic.play();
+  playBtn.textContent = '▶ PLAYING...';
+  playBtn.disabled = true;
 });
