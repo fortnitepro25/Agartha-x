@@ -4,10 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agartha-X</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/hof.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
   </head>
   <body>
+    <div class="layout">
+      <header class="y2k-header">
+        <div class="logo-area">
+          <img src="img/logo.png" alt="Agartha-X Logo" class="logo" />
+          <h1>AGARTHA-X</h1>
+        </div>
+        <div class="meta-area">
+          <p>VISITORS: <span id="visitor-count">38475015</span></p>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <nav class="y2k-nav">
+          <ul>
+            <li><a href="hof.html" class="active"> Hall of Fame</a></li>
+            <li><a href="#"> Music</a></li>
+            <li><a href="#"> Pets (coming soon)</a></li>
+            <li><a href="#"> Data</a></li>
+            <li><a href="index.html">Back to Intro</a></li>
+          </ul>
+        </nav>
+
+        <main class="y2k-main">
+          <div id="hof-base" class="base">
+            <h2>Hall of Fame</h2>
+            <div id="cmdnr-info">
+              <img src="img/agarthax.jpg" alt="Picure of commander" />
+              <div class="info-text">
+                <h3>Galactic Fleet Commander Ashtar</h3>
+                <p>
+                  Commander Ashtar, supreme overseer of the Intergalactic Peace Fleet, protector of Agarthan virtual world, and guardian of the 7th-dimensional Wi-Fi grid. Stationed between Venus and your third eye, he leads operations to raise planetary vibes, decode crop circle messages, and prevent humanity from accidentally pressing the cosmic unsubscribe button. When not commanding fleets of crystalline lightships, Ashtar enjoys long meditations on subterranean beaches and collecting holographic crystals shaped like cats. His motto: Stay radiant, stay hydrated, and trust the frequency.
+                </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

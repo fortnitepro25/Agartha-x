@@ -1,0 +1,10 @@
+:root {
+  --background-color: #00108b;
+  --main-color: #002c848b;
+  --nav-color: #000850;
+  --chrome-gray: rgba(80, 80, 90, 0.85);
+  --light-gray: rgba(120, 120, 130, 0.85);
+  --border-silver: #a0a0a0;
+  --accent-blue: #0c3b70;
+  --text-glow: 0 0 4px rgba(0, 160, 255, 0.6);
+}

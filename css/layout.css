@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  justify-content: center;
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.y2k-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.y2k-header .logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.y2k-header .logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.y2k-nav {
+  width: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.y2k-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.y2k-nav li {
+  margin-bottom: 15px;
+}
+
+.y2k-nav a {
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.y2k-main {
+  flex: 1;
+  padding: 20px 40px;
+}
+
+.base {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
