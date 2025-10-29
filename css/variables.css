@@ -1,10 +1,13 @@
 :root {
   --background-color: #00108b;
-  --main-color: #002c848b;
-  --nav-color: #000850;
+  --bg-gray-transparent: #4d4d4d89;
+  --bg-gray-opaque: #202020ff;
+  --main-color: #000a4c4e;
+  --text-blue: #000272;
+  --text-yellow: #ffff66;
   --chrome-gray: rgba(80, 80, 90, 0.85);
   --light-gray: rgba(120, 120, 130, 0.85);
   --border-silver: #a0a0a0;
-  --accent-blue: #0c3b70;
+  --accent-blue: #04006f;
   --text-glow: 0 0 4px rgba(0, 160, 255, 0.6);
 }

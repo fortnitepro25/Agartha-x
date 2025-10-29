@@ -1,30 +1,133 @@
-body {
-  background-image: url("../img/bg.png");
-}
+/* NAV */
 
 .y2k-nav {
-  color: var(--nav-color);
-  background: linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%);
-  backdrop-filter: blur(3px);
-  border-right: 2px solid var(--border-silver);
-  box-shadow: inset -1px 0 2px #666;
+  background-color: #10101a;
+  border-right: 1px solid #ffffff;
+  text-align: center;
 }
 
-.y2k-nav a:hover {
-  color: var(--accent-blue);
+.y2k-nav a {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  color: #a8d0ff;
+  background-color: #05052a;
+  border: 2px solid #1a1aff;
+  text-shadow: 0 0 5px #0d00ff, 0 0 10px #0040ff;
+  padding: 10px 5px;
+  display: block;
 }
 
-.y2k-nav a,
-.y2k-nav a:visited {
-  color: var(--nav-color);
+.y2k-nav a:hover,
+.y2k-nav a.active {
+  background-color: #0d00ff;
+  color: #ffffff;
+  border-color: #66ccff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #66ccff, 0 0 30px #0d00ff;
+  box-shadow: 0 0 12px #0d00ff, inset 0 0 6px #66ccff;
+  transform: scale(1.05);
 }
+
+/* PULSING FX*/
+.y2k-nav a.active {
+  animation: y2kPulse 1.5s infinite alternate;
+}
+
+@keyframes y2kPulse {
+  0% {
+    box-shadow: 0 0 6px #0d00ff, inset 0 0 5px #66ccff;
+  }
+  100% {
+    box-shadow: 0 0 14px #66ccff, inset 0 0 10px #ffffff;
+  }
+}
+
+.logo-area {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-area::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250%;
+  height: 250%;
+  background: radial-gradient(circle, rgba(102,204,255,0.1), transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.y2k-header h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow:
+    0 0 4px #99ccff,
+    0 0 8px #66aaff,
+    0 0 12px #3388ff;
+  margin: 0;
+}
+
 
 .y2k-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
   background: linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%);
-  border-bottom: 2px solid var(--border-silver);
-  box-shadow: inset 0 1px 0 #888, 0 2px 8px rgba(0, 0, 0, 0.6);
-  color: var(--accent-blue);
-  text-shadow: var(--text-glow);
+  border-bottom: 2px solid #555;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.y2k-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(#ffffff22 1px, transparent 1px);
+  background-size: 4px 4px;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/*  Visitor counter */
+
+.visitor-counter {
+  color: #002fd7;
+}
+
+.visitor-label {
+  animation: flicker 3s infinite;
+  color: #ccff00;
+}
+
+.visitor-number-inner span {
+  background: linear-gradient(90deg, #001e8a, #0d00ff, #2700b5, #001797);
+  text-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
+  font-weight: bold;
+}
+
+/*  Animations  */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .y2k-header h1 {
@@ -34,51 +137,204 @@ body {
   margin: 0;
 }
 
-.y2k-main {
-  background-color: var(--main-color);
+
+/* MAIN HOF CONTENT STYLE*/
+
+
+.hof-content {
+  position: relative;
+  background: radial-gradient(circle at top left, rgba(5, 5, 25, 0.95), rgba(0, 0, 10, 0.9));
+  border: 1px solid #0d00ff;
+  box-shadow:
+    0 0 15px rgba(13, 0, 255, 0.4),
+    inset 0 0 10px rgba(0, 0, 40, 0.8);
+  color: #b5c6ff;
+  text-shadow: 0 0 4px #0008, 0 0 6px #0010ff;
+  padding: 25px 30px;
+  border-radius: 6px;
+  font-family: "Orbitron", sans-serif;
+  overflow: hidden;
 }
 
-.base {
-  flex: 1;
-  padding: 20px 40px;
-  background: rgba(30, 30, 40, 0.8);
-  backdrop-filter: blur(5px);
-  border-left: 2px solid #555;
-  box-shadow: inset 0 0 10px #0008;
+/* === Decorative grid lines — faint scanlines for Y2K tech feel === */
+.hof-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 2px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* === Subtle pulsing glow === */
+.hof-content::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(13, 0, 255, 0.15), transparent 70%);
+  animation: hofPulse 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === Text animation / reveal flicker === */
+.hof-content span,
+.hof-content p {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes hofPulse {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+/* === Hover aura === */
+.hof-content:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #66ccff, 0 0 16px #0d00ff;
+  transition: all 0.3s ease-in-out;
 }
 
 #cmdnr-info {
+  flex: 0 0 240px;
   display: flex;
-  align-items: flex-start;
-  background: rgba(50, 50, 60, 0.8);
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #0008;
-  gap: 20px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #3a3a3a, #1f1f1f);
+  border: 2px solid #555;
+  box-shadow:
+    0 0 12px rgba(0, 0, 50, 0.5),
+    inset 0 0 8px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Subtle cosmic glow */
+#cmdnr-info::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(13, 0, 255, 0.08), transparent 70%);
+  animation: cmdnrPulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes cmdnrPulse {
+  0% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(1.05); }
+  100% { opacity: 0.1; transform: scale(1); }
 }
 
 #cmdnr-info img {
   width: 150px;
   height: auto;
-  border-radius: 8px;
-  border: 2px solid var(--border-silver);
+  border-radius: 6px;
+  border: 2px solid #777;
   flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(0, 0, 50, 0.5);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+#cmdnr-info img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 16px rgba(0, 0, 80, 0.6);
+}
+
+/* Info text */
 #cmdnr-info .info-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  z-index: 1;
+  animation: glitchEffect 2s infinite;
+}
+
+@keyframes glitchEffect {
+  0% {
+    text-shadow: 
+      2px 2px 0 #03009e, 
+      -2px -2px 0 #e0ff65, 
+      2px -2px 0 #3a008c, 
+      -2px 2px 0 #0016e0;
+  }
+  25% {
+    text-shadow: 
+      -2px -2px 0 #03009e, 
+      2px 2px 0 #e0ff65, 
+      -2px 2px 0 #3a008c, 
+      2px -2px 0 #0016e0;
+  }
+  50% {
+    text-shadow: 
+      2px 2px 0 #03009e, 
+      -2px -2px 0 #e0ff65, 
+      2px -2px 0 #3a008c, 
+      -2px 2px 0 #0016e0;
+  }
+  75% {
+    text-shadow: 
+      -2px -2px 0 #03009e, 
+      2px 2px 0 #e0ff65, 
+      -2px 2px 0 #3a008c, 
+      2px -2px 0 #0016e0;
+  }
+  100% {
+    text-shadow: 
+      2px 2px 0 #03009e, 
+      -2px -2px 0 #e0ff65, 
+      2px -2px 0 #3a008c, 
+      -2px 2px 0 #0016e0;
+  }
 }
 
 #cmdnr-info .info-text h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-  color: var(--accent-blue);
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  font-family: "Orbitron", sans-serif;
+  color: #3399ff;
+  text-shadow:
+    0 0 3px #222,
+    0 0 6px #0d00ff;
+  animation: glitchEffect 2s infinite;
 }
 
 #cmdnr-info .info-text p {
   margin: 0;
   line-height: 1.5;
+  font-size: 0.95rem;
   color: #ddd;
+  text-shadow: 0 0 2px #111;
+  text-align: center;
+  animation: textGlow 1.5s infinite alternate;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px #0008ff, 0 0 10px #fffb00, 0 0 15px #0029b0;
+  }
+  50% {
+    text-shadow: 0 0 10px #2f00ff, 0 0 20px #0059ff, 0 0 30px #ffff50;
+  }
+  100% {
+    text-shadow: 0 0 5px #000bd4, 0 0 10px #e1ff00, 0 0 15px #0d009f;
+  }
 }

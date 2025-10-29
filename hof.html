@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/hof.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="layout">
@@ -17,7 +21,10 @@
           <h1>AGARTHA-X</h1>
         </div>
         <div class="meta-area">
-          <p>VISITORS: <span id="visitor-count">38475015</span></p>
+          <p class="visitor-counter">
+            <span class="visitor-label">VISITORS:</span>
+            <span id="visitor-count" class="visitor-number">3,289,592</span>
+          </p>
         </div>
       </header>
 
@@ -26,20 +33,32 @@
           <ul>
             <li><a href="hof.html" class="active"> Hall of Fame</a></li>
             <li><a href="#"> Music</a></li>
-            <li><a href="#"> Pets (coming soon)</a></li>
+            <li><a href="#"> Pets</a></li>
             <li><a href="#"> Data</a></li>
             <li><a href="index.html">Back to Intro</a></li>
           </ul>
         </nav>
 
         <main class="y2k-main">
-          <!-- Left side: main content -->
           <div class="base">
-            <h2>Hall of Fame</h2>
-            <!-- Other content for Hall of Fame goes here -->
+            <h2 id="hof-title-wrapper">
+              <span id="hof-title">Hall of Fame</span>
+              <canvas id="hof-stars" aria-hidden="true"></canvas>
+            </h2>
+            <div class="hof-content">
+              Enter the musical Hall of Fame of Agartha-X. This site is
+              dedicated to presenting the most iconic and popular era-defining
+              music that have shaped the Agarthan music scene.
+              <br>
+              Here, you will find multiple award-winning artists and tracks that have left an
+              indelible mark on the hearts of Agarthans across the galaxy. From
+              the pulsating beats of synthwave to the ethereal melodies of
+              cosmic pop, each entry in this Hall of Fame represents a unique
+              chapter in our shared musical heritage.
+            </div>
           </div>
 
-          <!-- Right side: commander info sidebar -->
+          <!-- Right side: cmndr info sidebar -->
           <div id="cmdnr-info">
             <img src="img/agarthax.jpg" alt="Picture of commander" />
             <div class="info-text">
@@ -55,6 +74,7 @@
         </main>
       </div>
     </div>
+    <footer></footer>
     <script src="js/data.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
