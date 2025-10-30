@@ -65,19 +65,6 @@
   50% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.05); }
 }
 
-.y2k-header h1 {
-  font-family: "Press Start 2P", cursive;
-  font-size: 2rem;
-  letter-spacing: 3px;
-  color: #ffffff;
-  text-shadow:
-    0 0 4px #99ccff,
-    0 0 8px #66aaff,
-    0 0 12px #3388ff;
-  margin: 0;
-}
-
-
 .y2k-header {
   position: relative;
   display: flex;
@@ -131,28 +118,71 @@
 }
 
 .y2k-header h1 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
+  position: relative;
   margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.4rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #eaf6ff;
+  text-shadow:
+    0 0 4px #ffffff,
+    0 0 10px #dff4ff,
+    0 0 18px #66ccff,
+    0 0 30px #0d00ff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.25);
+  z-index: 2;
+  animation: neonFlicker 3.5s infinite;
 }
 
+/* soft bloom behind the text for extra neon feel */
+.y2k-header h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  border-radius: 8px;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(102,204,255,0.12) 0%, transparent 40%);
+  filter: blur(8px);
+  z-index: 1;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
 
-/* MAIN HOF CONTENT STYLE*/
+/* flicker + subtle pulse */
+@keyframes neonFlicker {
+  0%, 5%   { opacity: 1; text-shadow: 0 0 6px #ffffff, 0 0 12px #dff4ff, 0 0 20px #66ccff, 0 0 34px #0d00ff; filter: brightness(1); }
+  6%      { opacity: 0.65; text-shadow: 0 0 2px #cfefff, 0 0 8px #99e0ff; filter: brightness(0.7); }
+  7%      { opacity: 1; text-shadow: 0 0 6px #ffffff, 0 0 14px #aee8ff, 0 0 26px #66ccff; }
+  20%     { opacity: 0.4; text-shadow: none; filter: brightness(0.3); }
+  22%     { opacity: 1; text-shadow: 0 0 8px #ffffff, 0 0 16px #bfefff, 0 0 28px #66ccff; }
+  40%     { opacity: 0.9; text-shadow: 0 0 6px #fff, 0 0 12px #cfeeff, 0 0 20px #66ccff; }
+  60%     { opacity: 1; text-shadow: 0 0 10px #ffffff, 0 0 20px #99e0ff, 0 0 36px #66ccff; filter: brightness(1.05); }
+  80%     { opacity: 0.7; text-shadow: 0 0 3px #e8f7ff, 0 0 10px #9fe0ff; filter: brightness(0.8); }
+  100%    { opacity: 1; text-shadow: 0 0 6px #ffffff, 0 0 12px #dff4ff, 0 0 20px #66ccff, 0 0 34px #0d00ff; }
+}
 
+/* MAIN HOF CONTENT STYLE */
 
 .hof-content {
   position: relative;
   background: radial-gradient(circle at top left, rgba(5, 5, 25, 0.95), rgba(0, 0, 10, 0.9));
   border: 1px solid #0d00ff;
-  box-shadow:
-    0 0 15px rgba(13, 0, 255, 0.4),
-    inset 0 0 10px rgba(0, 0, 40, 0.8);
+  box-shadow: 0 0 15px rgba(13, 0, 255, 0.4), inset 0 0 10px rgba(0, 0, 40, 0.8);
   color: #b5c6ff;
-  text-shadow: 0 0 4px #0008, 0 0 6px #0010ff;
-  padding: 25px 30px;
-  border-radius: 6px;
+  text-shadow: 0 0 6px #0008, 0 0 8px #0010ff;
+  padding: 40px 50px;
+  border-radius: 12px;
   font-family: "Orbitron", sans-serif;
+  font-size: 1.4rem !important;
+  line-height: 1.8 !important;
+  text-align: left !important;
   overflow: hidden;
 }
 
@@ -186,19 +216,6 @@
   z-index: 0;
 }
 
-/* === Text animation / reveal flicker === */
-.hof-content span,
-.hof-content p {
-  position: relative;
-  z-index: 1;
-}
-
-@keyframes hofPulse {
-  0% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
-  100% { opacity: 0.3; transform: scale(1); }
-}
-
 /* === Hover aura === */
 .hof-content:hover {
   color: #ffffff;
@@ -206,13 +223,56 @@
   transition: all 0.3s ease-in-out;
 }
 
+@keyframes hofPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+/* === Adjust text shadow and increase readability === */
+.hof-content p {
+  text-shadow: 0 0 6px #0010ff, 0 0 8px #0d00ff;
+  margin: 0;
+}
+
+/* === Adjust for the general description size and readability === */
+.hof-content span,
+.hof-content p {
+  font-size: 1.4rem !important;
+  line-height: 1.8 !important; 
+  text-align: justify !important;
+  color: #e1e1e1 !important;
+  margin-bottom: 20px;
+}
+
+/* === Make the description stand out more === */
+.hof-content p {
+  font-weight: 400 !important;
+  text-shadow: 0 0 6px #0d00ff, 0 0 10px #66ccff;
+}
+
+/* CMDNR Info Box */
+
 #cmdnr-info {
-  flex: 0 0 240px;
+  flex: 0 0 auto;
+  align-self: flex-start;
+  width: 260px; 
+  max-width: 32%;
+  height: auto; 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
+  gap: 12px;
+  padding: 16px;
   border-radius: 10px;
   background: linear-gradient(145deg, #3a3a3a, #1f1f1f);
   border: 2px solid #555;
@@ -220,11 +280,30 @@
     0 0 12px rgba(0, 0, 50, 0.5),
     inset 0 0 8px rgba(255, 255, 255, 0.05);
   position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  overflow: visible;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Subtle cosmic glow */
+/* ensure image stays contained and doesn't force box size */
+#cmdnr-info img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 6px;
+  border: 2px solid #777;
+  box-shadow: 0 0 8px rgba(0, 0, 50, 0.5);
+  flex-shrink: 0;
+}
+
+/* info text wraps inside the box */
+#cmdnr-info .info-text {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0 4px;
+}
+
+/* Subtle glow */
 #cmdnr-info::before {
   content: "";
   position: absolute;

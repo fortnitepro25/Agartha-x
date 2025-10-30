@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const inner = document.createElement("span");
     inner.className = "visitor-number-inner";
 
-    // Wrap each copy in a span to control gap via CSS
     inner.innerHTML = `<span>${text}</span><span>${text}</span>`;
 
     number.appendChild(inner);
@@ -34,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: 1 + Math.random() * 1.5,
+        size: 2 + Math.random() * 2.5,
         blinkSpeed: 0.01 + Math.random() * 0.02,
         opacity: Math.random(),
         opacityDir: Math.random() > 0.5 ? 1 : -1,
@@ -54,8 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
         star.opacity = 0;
         star.opacityDir = 1;
       }
-
-      ctx.fillStyle = `rgba(13, 0, 255, ${star.opacity})`;
+      // STAR COLOR
+      ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
       ctx.fillRect(star.x, star.y, star.size, star.size);
     });
 

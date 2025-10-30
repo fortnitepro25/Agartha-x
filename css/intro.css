@@ -1,97 +1,122 @@
+/* === INTRO PANEL === */
 .intro-panel {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 360px;
-  padding: 25px 20px 35px;
-  border-radius: 4px;
+  padding: 25px 25px 35px;
+  border-radius: 6px;
 
-  background-color: #c6c6c6;
-  border: 2px solid #999;
-  border-top-color: #e2e2e2;
-  border-left-color: #e2e2e2;
+  background: linear-gradient(145deg, #2e2e3f, #1a1a24);
+  border: 2px solid #5c5cff;
+  border-top-color: #a0a0ff;
+  border-left-color: #a0a0ff;
 
-  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 2px #888, 0 4px 10px #000a;
+  box-shadow:
+    0 4px 10px #000a,
+    inset 0 1px 0 #ffffff33,
+    inset -1px -1px 3px #0008;
 
+  font-family: "Orbitron", sans-serif;
+  color: #dfe8ff;
+  text-align: center;
   z-index: 1;
 }
 
+/* === TITLE === */
 .intro-panel h1 {
-  font-size: 1.8rem;
-  color: #0a2f60;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  text-shadow: 0 1px 0 #eee;
+  font-size: 1.9rem;
+  color: #66aaff;
+  margin-bottom: 1.2rem;
+  text-shadow:
+    0 0 2px #0033ff,
+    0 0 6px #99ccff,
+    0 0 10px #0004ff;
 }
 
-.player {
-  background-color: #bdbdbd;
-  border: 2px solid #8f8f8f;
-  border-top-color: #e0e0e0;
-  border-left-color: #e0e0e0;
-  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 2px #777;
-  padding: 15px;
-  border-radius: 4px;
-  margin-bottom: 15px;
-}
-
-#playBtn {
-  background-color: #d0d0d0;
-  border: 2px solid #9c9c9c;
-  border-top-color: #f2f2f2;
-  border-left-color: #f2f2f2;
-  color: #0a2f60;
-  font-weight: 600;
-  padding: 10px 25px;
-  border-radius: 3px;
-  cursor: pointer;
-  font-family: "Orbitron", sans-serif;
-  font-size: 1rem;
-  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 2px #777;
-  transition: all 0.15s ease;
-}
-
-#playBtn:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-1px);
-}
-
-#playBtn:active {
-  background-color: #b0b0b0;
-  box-shadow: inset 0 2px 2px #666;
-  transform: translateY(1px);
-}
-
+/* === PARAGRAPH TEXT === */
 .intro-panel p {
   font-size: 1rem;
-  color: #0a2f60;
-  font-weight: 400;
+  color: #dfe8ff;
+  text-shadow: 0 0 2px #000, 0 0 5px #2244ff55;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* === PLAYER BOX === */
+.player {
+  background: linear-gradient(180deg, #3a3a4f, #2a2a3c);
+  border: 2px solid #6a6aff;
+  border-top-color: #c0c0ff;
+  border-left-color: #c0c0ff;
+  box-shadow:
+    inset 0 1px 0 #ffffff33,
+    inset -1px -1px 3px #0008;
+  padding: 15px;
+  border-radius: 4px;
   margin-bottom: 20px;
 }
 
-button {
-  background-color: #d0d0d0;
-  border: 2px solid #9c9c9c;
-  border-top-color: #f2f2f2;
-  border-left-color: #f2f2f2;
-  color: #0a2f60;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 3px;
-  font-weight: 400;
-  cursor: pointer;
+/* === BUTTONS === */
+button, #playBtn {
+  background: linear-gradient(180deg, #3a3aff, #2a2a9f);
+  border: 2px solid #0018ff;
+  border-top-color: #88aaff;
+  border-left-color: #88aaff;
+  color: #fff;
   font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 0 0 4px #000, 0 0 6px #ffee00;
+  padding: 10px 28px;
+  border-radius: 5px;
+  margin: 8px;
+  cursor: pointer;
+  box-shadow:
+    0 3px 5px #0006,
+    inset 0 1px 0 #ffffff44,
+    inset -1px -1px 3px #0008;
   transition: all 0.15s ease;
-  box-shadow: inset 0 1px 0 #fff, inset -1px -1px 2px #777;
 }
 
-button:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-1px);
+button:hover, #playBtn:hover {
+  background: linear-gradient(180deg, #4a4aff, #3a3ac0);
+  transform: translateY(-2px);
+  box-shadow:
+    0 5px 8px #0008,
+    inset 0 1px 0 #ffffff66;
 }
 
-button:active {
-  background-color: #b0b0b0;
+button:active, #playBtn:active {
+  background: linear-gradient(180deg, #2020a0, #181880);
   transform: translateY(1px);
+  box-shadow: inset 0 2px 4px #000a;
+}
+
+/* === BUTTON LAYOUT === */
+.intro-panel .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* === LITTLE DETAILS === */
+.intro-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(255,255,100,0.05), transparent 70%);
+  pointer-events: none;
+}
+
+/* === FAINT PULSE === */
+@keyframes subtleGlow {
+  0%, 100% { box-shadow: 0 0 10px #0018ff66; }
+  50% { box-shadow: 0 0 15px #ffee00aa; }
+}
+
+#playBtn {
+  animation: subtleGlow 2.5s infinite alternate;
 }
