@@ -1,3 +1,22 @@
+// Nav active link highlight
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".y2k-nav a");
+  const currentPage = window.location.pathname.split("/").pop(); // e.g. "music.html"
+
+  navLinks.forEach((link) => {
+    // Remove previous 'active' class
+    link.classList.remove("active");
+
+    // Match current page to link href
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+});
+
+// ------------------------------------------------------------------
+
+// Visitor number animation
 document.addEventListener("DOMContentLoaded", () => {
   const number = document.getElementById("visitor-count");
   if (number && !number.querySelector(".visitor-number-inner")) {
@@ -74,9 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initStarsEffect("hof-stars", "hof-title-wrapper"); // Hof title
   initStarsEffect("music-hof-stars", "music-hof-title-wrapper"); // Gallery title
 });
-
+//----------------------------------------------------------------
 // Footer effects
-
 document.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("footer-stars");
   if (!canvas) return;
