@@ -387,7 +387,7 @@
   max-width: 95%;
   margin: 0 auto 40px auto;
   overflow: hidden;
-  box-shadow: 0 0 12px #003366, 0 0 24px #0066cc;
+  box-shadow: 0 0 12px #001366, 0 0 24px #001bb5;
 }
 
 .hof-item .text-left {
@@ -410,7 +410,22 @@
 .hof-item .text-left h4:nth-child(2) {
   font-size: 1.3rem;
   color: #ffffff;
+  text-shadow: 0 0 6px #6666ff, 0 0 12px #003366;
+  font-size: 1.3rem;
+  color: #ffffff;
   text-shadow: 0 0 6px #66ccff, 0 0 12px #003366;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.hof-item .text-left h4::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  opacity: 0.6;
+  margin-top: 10px;
 }
 
 .hof-item .text-left p {
@@ -429,7 +444,7 @@
 
 .hof-item .images-right img {
   max-height: 170px;
-  border: 1px solid #66ccff;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   object-fit: cover;
 }
