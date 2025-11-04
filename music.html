@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="css/hof.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="layout">
@@ -34,8 +38,42 @@
             <li><a href="index.html">Back to Intro</a></li>
           </ul>
         </nav>
+
+        <main class="y2k-main">
+          <div class="base">
+            <h2 id="hof-title-wrapper">
+              <span id="hof-title">Agartha Listening Room</span>
+              <canvas id="hof-stars" aria-hidden="true"></canvas>
+            </h2>
+            <div class="hof-content">
+              Welcome to Agathas musical experience! Here, you can immerse
+              yourself in a curated selection of tracks that define the sonic
+              landscape of our world. From the pulsating rhythms of electronic
+              beats to the soothing melodies of acoustic harmonies, each track
+              has been carefully chosen to transport you to the heart of
+              Agarthas vibrant music scene.
+            </div>
+          </div>
+        </main>
       </div>
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <p>© 2005–2025 Agartha-X Network</p>
+            <p class="footer-credit">Powered by Galactic Dial-Up Systems™</p>
+          </div>
+
+          <div class="footer-right">
+            <a href="#">Top of Page ↑</a>
+            <a href="#">Guestbook</a>
+            <a href="#">Credits</a>
+          </div>
+
+          <canvas id="footer-stars" aria-hidden="true"></canvas>
+        </div>
+      </footer>
     </div>
+
     <script src="js/data.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
