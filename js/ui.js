@@ -2,27 +2,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const number = document.getElementById("visitor-count");
   if (number && !number.querySelector(".visitor-number-inner")) {
     const text = number.textContent.trim();
-    number.textContent = ""; // clear original
-
+    number.textContent = "";
     const inner = document.createElement("span");
     inner.className = "visitor-number-inner";
-
     inner.innerHTML = `<span>${text}</span><span>${text}</span>`;
-
     number.appendChild(inner);
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById('hof-stars');
+// Title Stars effect
+function initStarsEffect(canvasId, wrapperId) {
+  const canvas = document.getElementById(canvasId);
   if (!canvas) return;
 
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
   const starsCount = 50;
   const stars = [];
 
   function resize() {
-    const wrapper = document.getElementById('hof-title-wrapper');
+    const wrapper = document.getElementById(wrapperId);
     canvas.width = wrapper.clientWidth;
     canvas.height = wrapper.clientHeight;
   }
@@ -43,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    stars.forEach(star => {
+    stars.forEach((star) => {
       star.opacity += star.blinkSpeed * star.opacityDir;
       if (star.opacity >= 1) {
         star.opacity = 1;
@@ -53,11 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
         star.opacity = 0;
         star.opacityDir = 1;
       }
-      // STAR COLOR
       ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
       ctx.fillRect(star.x, star.y, star.size, star.size);
     });
-
     requestAnimationFrame(animate);
   }
 
@@ -67,10 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
   }
 
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     resize();
     initStars();
   });
 
   init();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initStarsEffect("hof-stars", "hof-title-wrapper"); // Hof title
+  initStarsEffect("music-hof-stars", "music-hof-title-wrapper"); // Gallery title
 });

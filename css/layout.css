@@ -82,7 +82,7 @@ body {
 #hof-title-wrapper {
   position: relative;
   display: inline-block;
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 2.4rem;
   color: #ffffff;
   letter-spacing: 6px;
@@ -90,10 +90,7 @@ body {
   text-align: center;
   padding: 20px 40px;
   user-select: none;
-  text-shadow:
-    0 0 6px #0d00ff,
-    0 0 12px #eeff00,
-    0 0 24px #0d00ff;
+  text-shadow: 0 0 6px #0d00ff, 0 0 12px #eeff00, 0 0 24px #0d00ff;
   overflow: visible;
 }
 
@@ -111,7 +108,6 @@ body {
   z-index: 1;
   pointer-events: none;
 }
-
 
 .y2k-main {
   display: flex;
@@ -138,6 +134,52 @@ body {
   text-align: center;
 }
 
+/* Gallery style */
+
+.hof-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+
+.hof-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.hof-item .text-left {
+  flex: 0 0 50%;
+  padding-right: 20px;
+}
+
+.hof-item .images-right {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .hof-item {
+    flex-direction: column;
+    padding: 15px;
+  }
+  .hof-item .text-left {
+    flex: 1 1 100%;
+    padding-right: 0;
+    margin-bottom: 15px;
+  }
+  .hof-item .images-right {
+    justify-content: flex-start;
+  }
+}
+
+
+/* Side panel commander info */
 
 #cmdnr-info {
   flex: 0 0 220px;
@@ -159,7 +201,7 @@ body {
   }
 }
 
-/* === GALACTIC VISITOR COUNTER — BLUE EDITION === */
+/* Visitor Counter */
 
 .visitor-counter {
   font-family: "Orbitron", "Courier New", monospace;

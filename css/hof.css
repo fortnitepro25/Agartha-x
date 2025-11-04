@@ -7,7 +7,7 @@
 }
 
 .y2k-nav a {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 0.7rem;
   color: #a8d0ff;
   background-color: #05052a;
@@ -34,10 +34,10 @@
 
 @keyframes y2kPulse {
   0% {
-    box-shadow: 0 0 6px #0d00ff, inset 0 0 5px #66ccff;
+    box-shadow: 0 0 6px #0d00ff, inset 0 0 5px #5100ff;
   }
   100% {
-    box-shadow: 0 0 14px #66ccff, inset 0 0 10px #ffffff;
+    box-shadow: 0 0 14px #0b0080, inset 0 0 10px #5100ff;
   }
 }
 
@@ -53,7 +53,11 @@
   left: 50%;
   width: 250%;
   height: 250%;
-  background: radial-gradient(circle, rgba(102,204,255,0.1), transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(102, 204, 255, 0.1),
+    transparent 70%
+  );
   transform: translate(-50%, -50%);
   border-radius: 50%;
   z-index: -1;
@@ -61,8 +65,15 @@
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.15; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 0.25; transform: translate(-50%, -50%) scale(1.05); }
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
 }
 
 .y2k-header {
@@ -125,13 +136,10 @@
   letter-spacing: 6px;
   text-transform: uppercase;
   color: #eaf6ff;
-  text-shadow:
-    0 0 4px #ffffff,
-    0 0 10px #dff4ff,
-    0 0 18px #66ccff,
+  text-shadow: 0 0 4px #ffffff, 0 0 10px #dff4ff, 0 0 18px #66ccff,
     0 0 30px #0d00ff;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke: 0.5px rgba(0,0,0,0.25);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.25);
   z-index: 2;
   animation: neonFlicker 3.5s infinite;
 }
@@ -147,7 +155,11 @@
   height: 120%;
   border-radius: 8px;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(102,204,255,0.12) 0%, transparent 40%);
+  background: radial-gradient(
+    circle,
+    rgba(102, 204, 255, 0.12) 0%,
+    transparent 40%
+  );
   filter: blur(8px);
   z-index: 1;
   mix-blend-mode: screen;
@@ -157,22 +169,61 @@
 
 /* flicker + subtle pulse */
 @keyframes neonFlicker {
-  0%, 5%   { opacity: 1; text-shadow: 0 0 6px #ffffff, 0 0 12px #dff4ff, 0 0 20px #66ccff, 0 0 34px #0d00ff; filter: brightness(1); }
-  6%      { opacity: 0.65; text-shadow: 0 0 2px #cfefff, 0 0 8px #99e0ff; filter: brightness(0.7); }
-  7%      { opacity: 1; text-shadow: 0 0 6px #ffffff, 0 0 14px #aee8ff, 0 0 26px #66ccff; }
-  20%     { opacity: 0.4; text-shadow: none; filter: brightness(0.3); }
-  22%     { opacity: 1; text-shadow: 0 0 8px #ffffff, 0 0 16px #bfefff, 0 0 28px #66ccff; }
-  40%     { opacity: 0.9; text-shadow: 0 0 6px #fff, 0 0 12px #cfeeff, 0 0 20px #66ccff; }
-  60%     { opacity: 1; text-shadow: 0 0 10px #ffffff, 0 0 20px #99e0ff, 0 0 36px #66ccff; filter: brightness(1.05); }
-  80%     { opacity: 0.7; text-shadow: 0 0 3px #e8f7ff, 0 0 10px #9fe0ff; filter: brightness(0.8); }
-  100%    { opacity: 1; text-shadow: 0 0 6px #ffffff, 0 0 12px #dff4ff, 0 0 20px #66ccff, 0 0 34px #0d00ff; }
+  0%,
+  5% {
+    opacity: 1;
+    text-shadow: 0 0 6px #ffffff, 0 0 12px #dff4ff, 0 0 20px #66ccff,
+      0 0 34px #0d00ff;
+    filter: brightness(1);
+  }
+  6% {
+    opacity: 0.65;
+    text-shadow: 0 0 2px #cfefff, 0 0 8px #99e0ff;
+    filter: brightness(0.7);
+  }
+  7% {
+    opacity: 1;
+    text-shadow: 0 0 6px #ffffff, 0 0 14px #aee8ff, 0 0 26px #66ccff;
+  }
+  20% {
+    opacity: 0.4;
+    text-shadow: none;
+    filter: brightness(0.3);
+  }
+  22% {
+    opacity: 1;
+    text-shadow: 0 0 8px #ffffff, 0 0 16px #bfefff, 0 0 28px #66ccff;
+  }
+  40% {
+    opacity: 0.9;
+    text-shadow: 0 0 6px #fff, 0 0 12px #cfeeff, 0 0 20px #66ccff;
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #99e0ff, 0 0 36px #66ccff;
+    filter: brightness(1.05);
+  }
+  80% {
+    opacity: 0.7;
+    text-shadow: 0 0 3px #e8f7ff, 0 0 10px #9fe0ff;
+    filter: brightness(0.8);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 6px #ffffff, 0 0 12px #dff4ff, 0 0 20px #66ccff,
+      0 0 34px #0d00ff;
+  }
 }
 
 /* MAIN HOF CONTENT STYLE */
 
 .hof-content {
   position: relative;
-  background: radial-gradient(circle at top left, rgba(5, 5, 25, 0.95), rgba(0, 0, 10, 0.9));
+  background: radial-gradient(
+    circle at top left,
+    rgba(5, 5, 25, 0.95),
+    rgba(0, 0, 10, 0.9)
+  );
   border: 1px solid #0d00ff;
   box-shadow: 0 0 15px rgba(13, 0, 255, 0.4), inset 0 0 10px rgba(0, 0, 40, 0.8);
   color: #b5c6ff;
@@ -248,7 +299,7 @@
 .hof-content span,
 .hof-content p {
   font-size: 1.4rem !important;
-  line-height: 1.8 !important; 
+  line-height: 1.8 !important;
   text-align: justify !important;
   color: #e1e1e1 !important;
   margin-bottom: 20px;
@@ -260,14 +311,137 @@
   text-shadow: 0 0 6px #0d00ff, 0 0 10px #66ccff;
 }
 
+/* Gallery */
+
+#hof-gallery,
+.hof-gallery {
+  margin-top: 100px !important;
+  padding-top: 40px;
+}
+
+#music-hof-title-wrapper {
+  position: relative;
+  display: inline-block;
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.4rem;
+  color: #ffffff;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px 40px;
+  margin: 0 auto 20px auto;
+  user-select: none;
+  text-shadow: 0 0 6px #0d00ff, 0 0 12px #eeff00, 0 0 24px #0d00ff;
+  overflow: visible;
+  width: fit-content;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+#music-hof-title {
+  position: relative;
+  z-index: 2;
+}
+
+#music-hof-title-wrapper #music-hof-title {
+  position: relative;
+  z-index: 2;
+}
+
+#music-hof-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hof-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.hof-section-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 10px 0 20px 0;
+  text-shadow: 0 0 4px #000000, 0 0 8px #002288;
+  text-align: center;
+}
+
+.hof-item {
+  display: flex;
+  justify-content: space-between;
+  background: #0b0b1f;
+  border: 2px solid #66ccff;
+  border-radius: 12px;
+  padding: 30px;
+  gap: 25px;
+  min-height: 200px;
+  max-width: 95%;
+  margin: 0 auto 40px auto;
+  overflow: hidden;
+  box-shadow: 0 0 12px #003366, 0 0 24px #0066cc;
+}
+
+.hof-item .text-left {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hof-item .text-left h4:first-child {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hof-item .text-left h4:nth-child(2) {
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-shadow: 0 0 6px #66ccff, 0 0 12px #003366;
+}
+
+.hof-item .text-left p {
+  font-size: 0.9rem;
+  color: #d0dfff;
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+
+.hof-item .images-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
+}
+
+.hof-item .images-right img {
+  max-height: 170px;
+  border: 1px solid #66ccff;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 /* CMDNR Info Box */
 
 #cmdnr-info {
   flex: 0 0 auto;
   align-self: flex-start;
-  width: 260px; 
+  width: 260px;
   max-width: 32%;
-  height: auto; 
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -276,8 +450,7 @@
   border-radius: 10px;
   background: linear-gradient(145deg, #3a3a3a, #1f1f1f);
   border: 2px solid #555;
-  box-shadow:
-    0 0 12px rgba(0, 0, 50, 0.5),
+  box-shadow: 0 0 12px rgba(0, 0, 50, 0.5),
     inset 0 0 8px rgba(255, 255, 255, 0.05);
   position: relative;
   overflow: visible;
@@ -317,9 +490,18 @@
 }
 
 @keyframes cmdnrPulse {
-  0% { opacity: 0.1; transform: scale(1); }
-  50% { opacity: 0.2; transform: scale(1.05); }
-  100% { opacity: 0.1; transform: scale(1); }
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
 }
 
 #cmdnr-info img {
@@ -349,38 +531,23 @@
 
 @keyframes glitchEffect {
   0% {
-    text-shadow: 
-      2px 2px 0 #03009e, 
-      -2px -2px 0 #e0ff65, 
-      2px -2px 0 #3a008c, 
+    text-shadow: 2px 2px 0 #03009e, -2px -2px 0 #e0ff65, 2px -2px 0 #3a008c,
       -2px 2px 0 #0016e0;
   }
   25% {
-    text-shadow: 
-      -2px -2px 0 #03009e, 
-      2px 2px 0 #e0ff65, 
-      -2px 2px 0 #3a008c, 
+    text-shadow: -2px -2px 0 #03009e, 2px 2px 0 #e0ff65, -2px 2px 0 #3a008c,
       2px -2px 0 #0016e0;
   }
   50% {
-    text-shadow: 
-      2px 2px 0 #03009e, 
-      -2px -2px 0 #e0ff65, 
-      2px -2px 0 #3a008c, 
+    text-shadow: 2px 2px 0 #03009e, -2px -2px 0 #e0ff65, 2px -2px 0 #3a008c,
       -2px 2px 0 #0016e0;
   }
   75% {
-    text-shadow: 
-      -2px -2px 0 #03009e, 
-      2px 2px 0 #e0ff65, 
-      -2px 2px 0 #3a008c, 
+    text-shadow: -2px -2px 0 #03009e, 2px 2px 0 #e0ff65, -2px 2px 0 #3a008c,
       2px -2px 0 #0016e0;
   }
   100% {
-    text-shadow: 
-      2px 2px 0 #03009e, 
-      -2px -2px 0 #e0ff65, 
-      2px -2px 0 #3a008c, 
+    text-shadow: 2px 2px 0 #03009e, -2px -2px 0 #e0ff65, 2px -2px 0 #3a008c,
       -2px 2px 0 #0016e0;
   }
 }
@@ -390,9 +557,7 @@
   font-size: 1.3rem;
   font-family: "Orbitron", sans-serif;
   color: #3399ff;
-  text-shadow:
-    0 0 3px #222,
-    0 0 6px #0d00ff;
+  text-shadow: 0 0 3px #222, 0 0 6px #0d00ff;
   animation: glitchEffect 2s infinite;
 }
 
