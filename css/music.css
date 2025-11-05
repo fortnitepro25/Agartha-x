@@ -1,0 +1,54 @@
+.music-players {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0;
+}
+
+.music-player {
+  background: linear-gradient(180deg, #10101a 0%, #05052a 100%);
+  border: 2px solid #1a1aff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 0 12px #0d00ff;
+}
+
+.music-player h3 {
+  font-family: "Press Start 2P", cursive;
+  color: #a8d0ff;
+  text-shadow: 0 0 5px #0d00ff, 0 0 10px #0040ff;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.music-player .song-info {
+  color: #66ccff;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+}
+
+.music-player audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Custom audio player styling */
+.music-player audio::-webkit-media-controls-panel {
+  background: #05052a;
+}
+
+.music-player audio::-webkit-media-controls-current-time-display,
+.music-player audio::-webkit-media-controls-time-remaining-display {
+  color: #a8d0ff;
+}
+
+.music-player:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px #0d00ff;
+  transition: all 0.3s ease;
+}
