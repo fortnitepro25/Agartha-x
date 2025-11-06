@@ -7,20 +7,23 @@ fetch("https://www.theaudiodb.com/api/v1/json/2/search.php?s=HIM")
   .then((data) => {
     var artist = data.artists[0];
 
-    fetch("https://www.theaudiodb.com/api/v1/json/2/album.php?i=" + artist.idArtist)
+    fetch(
+      "https://www.theaudiodb.com/api/v1/json/2/album.php?i=" + artist.idArtist
+    )
       .then((response) => response.json())
       .then((albumData) => {
-        var topAlbum = albumData.album && albumData.album[0] ? albumData.album[0] : null;
+        var topAlbum =
+          albumData.album && albumData.album[0] ? albumData.album[0] : null;
 
         // Add title above HIM card
         var sectionTitle = document.createElement("h3");
-        sectionTitle.className = "hof-section-title";
+        sectionTitle.className = "hof-section-title featured-title";
         sectionTitle.textContent = "Most Popular Artist in Agartha";
         featuredContainer.appendChild(sectionTitle);
 
         // Create HIM card
         var card = document.createElement("div");
-        card.className = "hof-item";
+        card.className = "hof-item featured-him";
 
         card.innerHTML = `
           <div class="text-left">
@@ -40,6 +43,11 @@ fetch("https://www.theaudiodb.com/api/v1/json/2/search.php?s=HIM")
             }
           </div>
         `;
+        card.addEventListener("click", () => {
+          window.location.href = "him.html";
+        });
+
+        
 
         featuredContainer.appendChild(card);
       });
@@ -53,15 +61,22 @@ var otherArtists = [
 ];
 
 otherArtists.forEach((artistObj) => {
-  fetch("https://www.theaudiodb.com/api/v1/json/2/search.php?s=" + encodeURIComponent(artistObj.name))
+  fetch(
+    "https://www.theaudiodb.com/api/v1/json/2/search.php?s=" +
+      encodeURIComponent(artistObj.name)
+  )
     .then((response) => response.json())
     .then((data) => {
       var artist = data.artists[0];
 
-      fetch("https://www.theaudiodb.com/api/v1/json/2/album.php?i=" + artist.idArtist)
+      fetch(
+        "https://www.theaudiodb.com/api/v1/json/2/album.php?i=" +
+          artist.idArtist
+      )
         .then((response) => response.json())
         .then((albumData) => {
-          var topAlbum = albumData.album && albumData.album[0] ? albumData.album[0] : null;
+          var topAlbum =
+            albumData.album && albumData.album[0] ? albumData.album[0] : null;
 
           var sectionTitle = document.createElement("h3");
           sectionTitle.className = "hof-section-title";
@@ -89,6 +104,12 @@ otherArtists.forEach((artistObj) => {
               }
             </div>
           `;
+
+          card.addEventListener("click", () => {
+            const pageName =
+              artist.strArtist.toLowerCase().replace(/\s+/g, "-") + ".html";
+            window.location.href = pageName;
+          });
 
           otherContainer.appendChild(card);
         });

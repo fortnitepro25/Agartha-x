@@ -152,3 +152,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   init();
 });
+
+// Featured artist sparkle
+
+// Add title above HIM card
+var sectionTitle = document.createElement("h3");
+sectionTitle.className = "hof-section-title";
+sectionTitle.textContent = "Most Popular Artist in Agartha";
+
+// Make it yellow + sparkly inline
+sectionTitle.style.color = "#ffee00";
+sectionTitle.style.textShadow =
+  "0 0 8px #ffeb3b, 0 0 16px #fff176, 0 0 32px #ffff00, 0 0 48px #ffea00";
+sectionTitle.style.animation = "sparkleYellow 2.5s infinite alternate";
+
+// Inject animation rule if not already in stylesheet
+if (!document.getElementById("sparkleYellowStyle")) {
+  const style = document.createElement("style");
+  style.id = "sparkleYellowStyle";
+  style.textContent = `
+    @keyframes sparkleYellow {
+      0% {
+        text-shadow: 0 0 6px #ffeb3b, 0 0 12px #fff176, 0 0 24px #ffea00;
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 10px #fff350, 0 0 20px #fff176, 0 0 40px #ffeb3b;
+        transform: scale(1.03);
+      }
+      100% {
+        text-shadow: 0 0 6px #ffeb3b, 0 0 12px #fff176, 0 0 24px #ffea00;
+        transform: scale(1);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+featuredContainer.appendChild(sectionTitle);

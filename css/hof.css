@@ -388,6 +388,7 @@
   margin: 0 auto 40px auto;
   overflow: hidden;
   box-shadow: 0 0 12px #001366, 0 0 24px #001bb5;
+  cursor: pointer;
 }
 
 .hof-item .text-left {
@@ -447,6 +448,25 @@
   border: 1px solid #ffffff;
   border-radius: 5px;
   object-fit: cover;
+}
+
+.hof-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px #354cff;
+}
+
+.featured-title {
+  display: none;
+}
+
+.featured-him {
+  box-shadow: 0 0 10px #fff176, 0 0 15px #ffea00;
+  border-color: #ffea00;
+}
+
+.featured-him:hover {
+  box-shadow: 0 0 30px #fff176, 0 0 10px #ffea00;
+  transform: scale(1.02);
 }
 
 /* CMDNR Info Box */
@@ -597,3 +617,4 @@
     text-shadow: 0 0 5px #000bd4, 0 0 10px #e1ff00, 0 0 15px #0d009f;
   }
 }
+
