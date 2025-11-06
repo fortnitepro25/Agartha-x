@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/hof.css" />
     <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/music.css" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
@@ -45,17 +46,62 @@
               <span id="hof-title">Agartha Listening Room</span>
               <canvas id="hof-stars" aria-hidden="true"></canvas>
             </h2>
+
             <div class="hof-content">
-              Welcome to Agathas musical experience! Here, you can immerse
-              yourself in a curated selection of tracks that define the sonic
-              landscape of our world. From the pulsating rhythms of electronic
-              beats to the soothing melodies of acoustic harmonies, each track
-              has been carefully chosen to transport you to the heart of
-              Agarthas vibrant music scene.
+              Welcome to Agartha’s musical experience! Here, you can immerse
+              yourself in a curated selection of iconic tracks from diverse genres.
+              From the gothic metal of HIM to the progressive instrumentals of Animals As Leaders,
+              the alternative metal of Deftones to the innovative hip-hop of Kanye West,
+              each track represents a unique piece of musical history.
+            </div>
+
+            <div class="music-players">
+
+              <!-- HIM -->
+              <div class="music-player">
+                <h3>HIM</h3>
+                <p class="song-info">Join Me In Death - Razorblade Romance (1999)</p>
+                <audio controls>
+                  <source src="audio/HIM - Join Me In Death.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
+              <!-- ANIMALS AS LEADERS -->
+              <div class="music-player">
+                <h3>ANIMALS AS LEADERS</h3>
+                <p class="song-info">Cafo - Animals as Leaders (2009)</p>
+                <audio controls>
+                  <source src="audio/Animals As Leaders CAFO official music video.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
+              <!-- DEFTONES -->
+              <div class="music-player">
+                <h3>DEFTONES</h3>
+                <p class="song-info">Change (In The House Of Flies) - White Pony (2000)</p>
+                <audio controls>
+                  <source src="audio/Deftones - Change (In the House of Flies)  Lyrics.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
+              <!-- KANYE WEST -->
+              <div class="music-player">
+                <h3>KANYE WEST</h3>
+                <p class="song-info">Runaway - My Beautiful Dark Twisted Fantasy (2010)</p>
+                <audio controls>
+                  <source src="audio/Runaway.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+
             </div>
           </div>
         </main>
       </div>
+
       <footer class="footer">
         <div class="footer-inner">
           <div class="footer-left">
@@ -76,5 +122,17 @@
     <script src="js/data.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Tämä varmistaa, että vain yksi kappale soi kerrallaan -->
+    <script>
+      document.addEventListener('play', function(e) {
+        const audios = document.querySelectorAll('audio');
+        for (let audio of audios) {
+          if (audio !== e.target) {
+            audio.pause();
+          }
+        }
+      }, true);
+    </script>
   </body>
 </html>
