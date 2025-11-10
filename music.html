@@ -29,6 +29,18 @@
         </div>
       </header>
 
+      <marquee
+        behavior="scroll"
+        direction="left"
+        scrollamount="6"
+        class="led-ticker"
+      >
+        <span>AGARTHA-X NETWORK</span>
+        <span>7TH-DIMENSIONAL WI-FI ACTIVE</span>
+        <span>COMMANDER ASHTAR ONLINE</span> <span>FREQUENCY 432.1 Hz</span>
+        <span>STAY RADIANT • STAY HYDRATED</span>
+      </marquee>
+
       <div class="content-wrapper">
         <nav class="y2k-nav">
           <ul>
@@ -49,20 +61,25 @@
 
             <div class="hof-content">
               Welcome to Agartha’s musical experience! Here, you can immerse
-              yourself in a curated selection of iconic tracks from diverse genres.
-              From the gothic metal of HIM to the progressive instrumentals of Animals As Leaders,
-              the alternative metal of Deftones to the innovative hip-hop of Kanye West,
-              each track represents a unique piece of musical history.
+              yourself in a curated selection of iconic tracks from diverse
+              genres. From the gothic metal of HIM to the progressive
+              instrumentals of Animals As Leaders, the alternative metal of
+              Deftones to the innovative hip-hop of Kanye West, each track
+              represents a unique piece of musical history.
             </div>
 
             <div class="music-players">
-
               <!-- HIM -->
               <div class="music-player">
                 <h3>HIM</h3>
-                <p class="song-info">Join Me In Death - Razorblade Romance (1999)</p>
+                <p class="song-info">
+                  Join Me In Death - Razorblade Romance (1999)
+                </p>
                 <audio controls>
-                  <source src="audio/HIM - Join Me In Death.mp3" type="audio/mpeg">
+                  <source
+                    src="audio/HIM - Join Me In Death.mp3"
+                    type="audio/mpeg"
+                  />
                   Your browser does not support the audio element.
                   <!-- LISÄÄ ALBUM COVER -->
                 </audio>
@@ -73,7 +90,10 @@
                 <h3>ANIMALS AS LEADERS</h3>
                 <p class="song-info">Cafo - Animals as Leaders (2009)</p>
                 <audio controls>
-                  <source src="audio/Animals As Leaders CAFO official music video.mp3" type="audio/mpeg">
+                  <source
+                    src="audio/Animals As Leaders CAFO official music video.mp3"
+                    type="audio/mpeg"
+                  />
                   Your browser does not support the audio element.
                 </audio>
               </div>
@@ -81,9 +101,14 @@
               <!-- DEFTONES -->
               <div class="music-player">
                 <h3>DEFTONES</h3>
-                <p class="song-info">Change (In The House Of Flies) - White Pony (2000)</p>
+                <p class="song-info">
+                  Change (In The House Of Flies) - White Pony (2000)
+                </p>
                 <audio controls>
-                  <source src="audio/Deftones - Change (In the House of Flies)  Lyrics.mp3" type="audio/mpeg">
+                  <source
+                    src="audio/Deftones - Change (In the House of Flies)  Lyrics.mp3"
+                    type="audio/mpeg"
+                  />
                   Your browser does not support the audio element.
                 </audio>
               </div>
@@ -91,13 +116,14 @@
               <!-- KANYE WEST -->
               <div class="music-player">
                 <h3>KANYE WEST</h3>
-                <p class="song-info">Runaway - My Beautiful Dark Twisted Fantasy (2010)</p>
+                <p class="song-info">
+                  Runaway - My Beautiful Dark Twisted Fantasy (2010)
+                </p>
                 <audio controls>
-                  <source src="audio/Runaway.mp3" type="audio/mpeg">
+                  <source src="audio/Runaway.mp3" type="audio/mpeg" />
                   Your browser does not support the audio element.
                 </audio>
               </div>
-
             </div>
           </div>
         </main>
@@ -126,14 +152,18 @@
 
     <!-- Tämä varmistaa, että vain yksi kappale soi kerrallaan -->
     <script>
-      document.addEventListener('play', function(e) {
-        const audios = document.querySelectorAll('audio');
-        for (let audio of audios) {
-          if (audio !== e.target) {
-            audio.pause();
+      document.addEventListener(
+        "play",
+        function (e) {
+          const audios = document.querySelectorAll("audio");
+          for (let audio of audios) {
+            if (audio !== e.target) {
+              audio.pause();
+            }
           }
-        }
-      }, true);
+        },
+        true
+      );
     </script>
   </body>
 </html>
