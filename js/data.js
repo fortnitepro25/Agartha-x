@@ -44,7 +44,7 @@ fetch("https://www.theaudiodb.com/api/v1/json/2/search.php?s=HIM")
           </div>
         `;
         card.addEventListener("click", () => {
-          window.location.href = "him.html";
+          window.location.href = "artists/him.html";
         });
 
         
