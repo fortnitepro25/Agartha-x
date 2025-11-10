@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIM • Agartha-X Hall of Fame</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/hof.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  </head>
+  <body>
+    <div class="layout">
+      <header class="y2k-header">
+        <div class="logo-area">
+          <img src="img/logo.png" alt="Agartha-X Logo" class="logo" />
+          <h1>AGARTHA-X</h1>
+        </div>
+        <div class="meta-area">
+          <p class="visitor-counter">
+            <span class="visitor-label">VISITORS:</span>
+            <span id="visitor-count" class="visitor-number">3,289,592</span>
+          </p>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <nav class="y2k-nav">
+          <ul>
+            <li><a href="../hof.html" class="active"> Hall of Fame</a></li>
+            <li><a href="../music.html"> Music</a></li>
+            <li><a href="#"> Pets</a></li>
+            <li><a href="#"> Data</a></li>
+            <li><a href="../index.html">Back to Intro</a></li>
+          </ul>
+        </nav>
+        <main class="y2k-main">
+          <section id="artist-detail">
+            <h1 class="artist-name glow">Loading...</h1>
+            <div class="artist-content">
+              <img id="artist-thumb" src="" alt="Artist portrait" />
+              <div id="artist-bio">Decoding transmission…</div>
+              <div id="artist-albums" class="album-grid"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <p>© 2005–2025 Agartha-X Network</p>
+            <p class="footer-credit">Powered by Galactic Dial-Up Systems™</p>
+          </div>
+          <div class="footer-right">
+            <a href="#">Top of Page ↑</a>
+            <a href="#">Credits</a>
+          </div>
+          <canvas id="footer-stars" aria-hidden="true"></canvas>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../js/ui.js"></script>
+    <script src="../js/artist-detail.js"></script>
+  </body>
+</html>

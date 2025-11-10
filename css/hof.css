@@ -618,3 +618,150 @@
   }
 }
 
+/* ————————————————————————
+  ARTIST PAGES
+   ———————————————————————— */
+
+#artist-detail {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.artist-name.glow {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.4rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 0 10px #0d00ff, 0 0 20px #66ccff, 0 0 40px #0d00ff,
+    0 0 60px #66ccff;
+  animation: neonFlicker 4s infinite;
+  margin-bottom: 30px;
+}
+
+/* Portrait */
+#artist-thumb {
+  max-width: 340px;
+  border: 3px double #66ccff;
+  box-shadow: 0 0 20px #0d00ff, 0 0 40px rgba(102, 204, 255, 0.4);
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+#artist-thumb:hover {
+  transform: scale(1.05);
+}
+
+#artist-bio {
+  margin: 40px auto;
+  max-width: 900px;
+  background: rgba(5, 5, 25, 0.92);
+  border: 2px solid #66ccff;
+  box-shadow: 0 0 20px #0d00ff, inset 0 0 15px rgba(13, 0, 255, 0.2);
+  padding: 30px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #b5c6ff;
+  text-shadow: 0 0 6px #0010ff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scanlines inside bio */
+#artist-bio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 1px,
+    rgba(102, 204, 255, 0.06) 1px,
+    rgba(102, 204, 255, 0.06) 2px
+  );
+  pointer-events: none;
+}
+
+/* Pulsing border glow */
+#artist-bio::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(13, 0, 255, 0.2), transparent 70%);
+  animation: hofPulse 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Album grid */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.album-card {
+  background: #0b0b1f;
+  border: 2px solid #1a1aff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 25px #66ccff, 0 0 40px #0d00ff;
+  border-color: #66ccff;
+}
+
+.album-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #66ccff;
+}
+
+.album-card p {
+  padding: 12px;
+  margin: 0;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-shadow: 0 0 6px #0d00ff;
+  background: rgba(5, 5, 25, 0.8);
+}
+
+.album-card .year {
+  display: block;
+  color: #ccff00;
+  font-size: 0.65rem;
+  margin-top: 6px;
+}
+
+.error {
+  color: #ff00ff;
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 0 0 10px #ff00ff;
+  animation: flicker 0.5s infinite alternate;
+}
+
+@keyframes neonFlicker {
+}
+@keyframes hofPulse {
+}
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+    text-shadow: 0 0 20px #ff00ff;
+  }
+}
