@@ -69,61 +69,37 @@
             </div>
 
             <div class="music-players">
-              <!-- HIM -->
-              <div class="music-player">
-                <h3>HIM</h3>
-                <p class="song-info">
-                  Join Me In Death - Razorblade Romance (1999)
-                </p>
-                <audio controls>
-                  <source
-                    src="audio/HIM - Join Me In Death.mp3"
-                    type="audio/mpeg"
-                  />
-                  Your browser does not support the audio element.
-                  <!-- LISÄÄ ALBUM COVER -->
-                </audio>
-              </div>
+              <div
+                class="track"
+                data-artist="HIM"
+                data-song="Join Me in Death"
+                data-album="Razorblade Romance"
+                data-youtube="DanMZQ8uF1I"
+              ></div>
 
-              <!-- ANIMALS AS LEADERS -->
-              <div class="music-player">
-                <h3>ANIMALS AS LEADERS</h3>
-                <p class="song-info">Cafo - Animals as Leaders (2009)</p>
-                <audio controls>
-                  <source
-                    src="audio/Animals As Leaders CAFO official music video.mp3"
-                    type="audio/mpeg"
-                  />
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
+              <div
+                class="track"
+                data-artist="Kanye West"
+                data-song="Runaway"
+                data-album="My Beautiful Dark Twisted Fantasy"
+                data-youtube="Bm5iA4Zupek"
+              ></div>
 
-              <!-- DEFTONES -->
-              <div class="music-player">
-                <h3>DEFTONES</h3>
-                <p class="song-info">
-                  Change (In The House Of Flies) - White Pony (2000)
-                </p>
-                <audio controls>
-                  <source
-                    src="audio/Deftones - Change (In the House of Flies)  Lyrics.mp3"
-                    type="audio/mpeg"
-                  />
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
+              <div
+                class="track"
+                data-artist="Deftones"
+                data-song="Change (In the House of Flies)"
+                data-album="White Pony"
+                data-youtube="WPpDyIJdasg"
+              ></div>
 
-              <!-- KANYE WEST -->
-              <div class="music-player">
-                <h3>KANYE WEST</h3>
-                <p class="song-info">
-                  Runaway - My Beautiful Dark Twisted Fantasy (2010)
-                </p>
-                <audio controls>
-                  <source src="audio/Runaway.mp3" type="audio/mpeg" />
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
+              <div
+                class="track"
+                data-artist="Animals As Leaders"
+                data-song="CAFO"
+                data-album="Animals As Leaders"
+                data-youtube="q0ZrF7taMHA"
+              ></div>
             </div>
           </div>
         </main>
@@ -149,21 +125,6 @@
     <script src="js/data.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/main.js"></script>
-
-    <!-- Tämä varmistaa, että vain yksi kappale soi kerrallaan -->
-    <script>
-      document.addEventListener(
-        "play",
-        function (e) {
-          const audios = document.querySelectorAll("audio");
-          for (let audio of audios) {
-            if (audio !== e.target) {
-              audio.pause();
-            }
-          }
-        },
-        true
-      );
-    </script>
+    <script src="js/music.js"></script>
   </body>
 </html>
