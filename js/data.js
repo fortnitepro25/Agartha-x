@@ -44,10 +44,12 @@ fetch("https://www.theaudiodb.com/api/v1/json/2/search.php?s=HIM")
           </div>
         `;
         card.addEventListener("click", () => {
-          window.location.href = "artists/him.html";
+          const slug = artist.strArtist
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^a-z0-9-]/g, ""); // extra safety
+          window.location.href = `artists/${slug}.html`;
         });
-
-        
 
         featuredContainer.appendChild(card);
       });
@@ -106,11 +108,12 @@ otherArtists.forEach((artistObj) => {
           `;
 
           card.addEventListener("click", () => {
-            const pageName =
-              artist.strArtist.toLowerCase().replace(/\s+/g, "-") + ".html";
-            window.location.href = pageName;
+            const slug = artist.strArtist
+              .toLowerCase()
+              .replace(/\s+/g, "-")
+              .replace(/[^a-z0-9-]/g, ""); // extra safety
+            window.location.href = `artists/${slug}.html`;
           });
-
           otherContainer.appendChild(card);
         });
     });
