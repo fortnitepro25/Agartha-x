@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.track').forEach(container => {
     const videoId = container.dataset.youtube;
+    console.log(videoId);
+    
     if (!videoId) return;
 
     const playerHTML = `
