@@ -1,0 +1,48 @@
+.gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border: 3px solid var(--accent-color, #00ffcc);
+  padding: 6px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.2);
+}
+
+.gallery-item.favorited {
+  border-color: gold;
+  box-shadow: 0 0 20px gold;
+}
+
+.gallery-item.favorited .fav-btn {
+  background: gold;
+  color: black;
+}
